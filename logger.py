@@ -37,10 +37,8 @@ def find_contact():
 
 def delete_contact():
     temp = []
-    contacts = []
     with open('data.txt', 'r', encoding='utf-8') as f:
-        for i in f:
-            contacts.append(i.strip())
+        contacts = [line.strip() for line in f]
     while True:
         print('По каким параметрам найти контакт для его удаления:\n1. Имя\n2. Фамилия\n')
         command_index = int(input('Команда: '))
@@ -74,11 +72,8 @@ def delete_contact():
 
 def contacts_replace():
     temp = []
-    contacts = []
-
     with open('data.txt', 'r', encoding='utf-8') as f:
-        for i in f:
-            contacts.append(i.strip())
+        contacts = [line.strip() for line in f]
     while True:
         print('По каким параметрам найти контакт для его изменения:\n1. Имя\n2. Фамилия\n')
         command_index = int(input('Команда: '))
